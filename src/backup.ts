@@ -45,8 +45,7 @@ const dumpToFile = async (path: string) => {
       }
 
       if (stderr != "") {
-        reject({ stderr: stderr.trimEnd() });
-        return;
+        console.warn(stderr.trimEnd())
       }
 
       console.log("Backup size:", filesize(statSync(path).size));
